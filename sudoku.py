@@ -45,8 +45,22 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             pygame.quit()
+
         if event.type == pygame.MOUSEBUTTONDOWN and title_screen:
             x, y = event.pos()
+            if 90 <= x <= 190 and 450 <= y <= 490: #this should be for difficulty easy, not entirely sure if its implemented correctly
+                difficulty = "Easy"
+                title_screen = False
+
+            elif 270 <= x <= 370 and 450 <= y <= 490: #medium
+                difficulty = "Medium"
+                title_screen = False
+
+            elif 450 <= x <= 550 and 450 <= y <= 490: #hard
+                difficulty = "Hard"
+                title_screen = False
+
+
         if event.type == pygame.MOUSEBUTTONDOWN and game_over:
             game_over = False
         if event.type == pygame.MOUSEBUTTONDOWN and not title_screen and not game_over:
@@ -60,18 +74,3 @@ while True:
     clock.tick(60)
 
 
-#MAIN FUNCTION
-def main():
-    pygame.display.set_caption("Sudoku Game")
-    screen = pygame.display.set_mode((screen_width,screen_height))
-    clock = pygame.time.Clock()
-
-    game_over = False
-
-    while True:
-
-
-
-
-if __name__ == "__main__":
-    main()
