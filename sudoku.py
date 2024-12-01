@@ -58,3 +58,20 @@ while True:
         draw_game_over()
     pygame.display.flip()
     clock.tick(60)
+
+
+#MAIN FUNCTION
+def main():
+    pygame.display.set_caption("Sudoku Game")
+    screen = pygame.display.set_mode((screen_width,screen_height))
+    clock = pygame.time.Clock()
+
+    game_over = False
+
+    while True:
+
+
+
+
+if __name__ == "__main__":
+    main()
